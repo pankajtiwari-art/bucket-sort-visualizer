@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>🎧 Bucket Sort Visualizer | Immersive Audio + Detailed Animations</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="visualizer">
+  <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+    <h1>📦 BUCKET SORT · AUDIO VISUALIZER <span style="font-size: 1rem;">🎧</span></h1>
+    <div class="ctrl-group">
+      <span>🔊 audio on action</span>
+    </div>
+  </div>
+  <div class="sub">⚡ distribution → sorting each bucket (insertion) → gathering | immersive beep feedback</div>
+
+  <div class="controls">
+    <div class="ctrl-group">
+      <button id="randomizeBtn" title="new random array">🎲 RANDOM</button>
+      <button id="startSortBtn" class="primary-btn">▶ START SORT</button>
+      <button id="stopSortBtn" class="danger-btn">⏹️ STOP</button>
+    </div>
+    <div class="ctrl-group">
+      <span>📊 size</span>
+      <input type="range" id="arraySizeSlider" min="5" max="24" value="12" step="1">
+      <span id="sizeValue" class="size-val">12</span>
+    </div>
+    <div class="ctrl-group">
+      <span>⏩ speed (ms)</span>
+      <input type="range" id="speedSlider" min="20" max="400" value="120" step="5">
+      <span id="speedValue" class="speed-val">120</span>
+    </div>
+    <div class="ctrl-group">
+      <span>🧺 buckets: 10 (0-99 range)</span>
+    </div>
+  </div>
+
+  <div class="array-container">
+    <canvas id="arrayCanvas" width="900" height="200" style="width:100%; height:auto; max-height:220px"></canvas>
+  </div>
+
+  <div class="buckets-title">
+    <span>🗑️ BUCKETS [0-9]  (each holds values based on tens digit)</span>
+    <span class="status-badge" id="phaseText">⚡ idle</span>
+  </div>
+  <div id="bucketsContainer" class="buckets-grid">
+    </div>
+  <div class="phase-indicator" id="infoMessage">
+    🎛️ click START — watch distribution, bucket sorting & gathering with audio
+  </div>
+  <footer>✨ detailed: each move/insertion/swap triggers beep | insertion sort inside buckets | full bucket sort pipeline</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
